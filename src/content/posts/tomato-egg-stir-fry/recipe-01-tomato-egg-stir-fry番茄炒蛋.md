@@ -1,12 +1,12 @@
 ---
 title: "Tomato Egg Stir-fry — The Dish Every Chinese Kid Grew Up Eating"
-published: 1970-01-03
+published: 2026-07-11
 pinned: false
 tags: ["tomato egg", "Chinese tomato egg", "easy Chinese recipe", "番茄炒蛋", "beginner Chinese cooking"]
-category: 食品
-date: 2026-07-08
+category: home‑cooked dishes | 家常菜
+date: 2026-07-11
 draft: false
-slug: "tomato-egg-stir-fry"
+slug: "Tomato Egg Stir-fry"
 ---
 
 
