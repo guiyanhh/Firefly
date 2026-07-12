@@ -6,3 +6,10 @@ directory = "./dist"
 
 [vars]
 NODE_VERSION = "22"
+
+[observability]
+enabled = true
+
+[observability.logs]
+invocation_logs = true
+head_sampling_rate = 1
