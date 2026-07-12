@@ -2,14 +2,14 @@ import type { SiteConfig } from "@/types/siteConfig";
 
 // 定义站点语言
 // 语言代码，例如：'zh_CN', 'zh_TW', 'en', 'ja', 'ru', 'ko'。
-const SITE_LANG = "zh_CN";
+const SITE_LANG = "en";
 
 export const siteConfig: SiteConfig = {
 	// 站点标题
-	title: "Firefly",
+	title: "Rui's Chinese-style kitchen",
 
 	// 站点副标题
-	subtitle: "Demo site",
+	subtitle: "home",
 
 	// 站点 URL
 	site_url: "https://firefly.cuteleaf.cn",
@@ -25,7 +25,7 @@ export const siteConfig: SiteConfig = {
 		"Astro",
 		"ACGN",
 		"博客",
-		"技术博客",
+		"美食博客",
 		"静态博客",
 	],
 

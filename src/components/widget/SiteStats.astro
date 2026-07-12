@@ -108,6 +108,14 @@ const stats = [
 		dynamic: true,
 		id: "last-update",
 	},
+	{
+		icon: "material-symbols:person-outline",
+		label: i18n(I18nKey.siteStatsTodayVisitors),
+		value: 0, // 将由客户端更新
+		suffix: i18n(I18nKey.siteStatsTodayVisitsSuffix),
+		dynamic: true,
+		id: "today-visitors",
+	},
 ];
 ---
 
@@ -142,6 +150,45 @@ const stats = [
 </WidgetLayout>
 
 <script is:inline define:vars={{ siteStartDate, lastPostDate, todayText }}>
+  // 今日访客访问记录：使用 localStorage 按天记录访问次数，sessionStorage 防止同一会话内页面切换重复累加
+  var TODAY_VISITS_KEY = 'firefly-today-visits';
+  var VISIT_COUNTED_KEY = 'firefly-visit-counted';
+
+  function getTodayStr() {
+    var d = new Date();
+    return d.getFullYear() + '-' +
+      String(d.getMonth() + 1).padStart(2, '0') + '-' +
+      String(d.getDate()).padStart(2, '0');
+  }
+
+  function updateTodayVisitors() {
+    var todayStr = getTodayStr();
+    var count = 0;
+    try {
+      var stored = localStorage.getItem(TODAY_VISITS_KEY);
+      if (stored) {
+        var data = JSON.parse(stored);
+        if (data.date === todayStr) {
+          count = data.count || 0;
+        }
+      }
+      // 仅在当前会话首次访问时累加，避免页面切换重复计数
+      if (!sessionStorage.getItem(VISIT_COUNTED_KEY)) {
+        count += 1;
+        localStorage.setItem(TODAY_VISITS_KEY, JSON.stringify({ date: todayStr, count: count }));
+        sessionStorage.setItem(VISIT_COUNTED_KEY, '1');
+      }
+    } catch (e) {
+      // localStorage 不可用（如隐私模式）时，至少展示本次访问
+      count = count || 1;
+    }
+
+    var todayVisitorElements = document.querySelectorAll('[data-stat-id="today-visitors"]');
+    todayVisitorElements.forEach((element) => {
+      element.textContent = count.toString();
+    });
+  }
+
   function updateDynamicStats() {
     const today = new Date();
 
@@ -176,6 +223,9 @@ const stats = [
         }
       });
     }
+
+    // 更新今日访客数
+    updateTodayVisitors();
   }
 
   // 页面加载时更新
