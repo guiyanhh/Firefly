@@ -18,7 +18,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 
 	// 文章及其子菜单
 	links.push({
-		name: "文章",
+		name: "文章|Articles",
 		url: "#",
 		icon: "material-symbols:article",
 		children: [
@@ -41,7 +41,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 
 	// 我的及其子菜单
 	links.push({
-		name: "我的",
+		name: "My",
 		url: "#",
 		icon: "material-symbols:person",
 		children: [
@@ -58,7 +58,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 
 	// 关于及其子菜单
 	links.push({
-		name: "关于",
+		name: "About",
 		url: "#",
 		icon: "material-symbols:info",
 		children: [
@@ -72,7 +72,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 
 	// 自定义导航栏链接
 	links.push({
-		name: "链接",
+		name: "Links",
 		url: "#",
 		icon: "material-symbols:link",
 		// 子菜单
@@ -120,62 +120,62 @@ export const navBarSearchConfig: NavBarSearchConfig = {
 // ============================================================================
 export const LinkPresets: Record<string, NavBarLink> = {
 	Home: {
-		name: "主页",
+		name: "主页|Home",
 		url: "/",
 		icon: "material-symbols:home",
 	},
 	Archive: {
-		name: "归档",
+		name: "归档|Archive",
 		url: "/archive/",
 		icon: "material-symbols:archive",
 	},
 	Categories: {
-		name: "分类",
+		name: "分类|Categories",
 		url: "/categories/",
 		icon: "material-symbols:folder-open-rounded",
 	},
 	Tags: {
-		name: "标签",
+		name: "标签|Tags",
 		url: "/tags/",
 		icon: "material-symbols:tag-rounded",
 	},
 	Friends: {
-		name: "友链",
+		name: "友链|Friends",
 		url: "/friends/",
 		icon: "material-symbols:group",
 		pageKey: "friends",
 	},
 	Sponsor: {
-		name: "打赏",
+		name: "打赏|Sponsor",
 		url: "/sponsor/",
 		icon: "material-symbols:favorite",
 		pageKey: "sponsor",
 	},
 	Guestbook: {
-		name: "留言",
+		name: "留言|Guestbook",
 		url: "/guestbook/",
 		icon: "material-symbols:chat",
 		pageKey: "guestbook",
 	},
 	About: {
-		name: "关于我",
+		name: "关于我|About",
 		url: "/about/",
 		icon: "material-symbols:person",
 	},
 	Bangumi: {
-		name: "番组计划",
+		name: "番组计划|Bangumi",
 		url: "/bangumi/",
 		icon: "material-symbols:movie",
 		pageKey: "bangumi",
 	},
 	Gallery: {
-		name: "相册",
+		name: "相册|Gallery",
 		url: "/gallery/",
 		icon: "material-symbols:photo-library",
 		pageKey: "gallery",
 	},
 	Anime: {
-		name: "追番",
+		name: "追番|Anime",
 		url: "/anime/",
 		icon: "material-symbols:live-tv",
 		pageKey: "anime",
